@@ -4,14 +4,14 @@ voting-app:
     - "5000:80"
 
 redis:
-  image: redis
+  image: dduportal/arm-redis
   ports: ["6379"]
 
 worker:
   build: ./worker
 
 db:
-  image: postgres:9.4
+  image: zsoltm/postgresql-armhf
   volumes:
     - "myvolume:/var/lib/postgresql/data"
 

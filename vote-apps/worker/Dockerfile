@@ -1,10 +1,13 @@
 FROM hypriot/rpi-java:latest
 
+RUN echo 'Acquire::http::proxy "http://10.0.4.2:3128";' > /etc/apt/apt.conf.d/proxy.conf
 RUN apt-get update -qq && apt-get install -y maven && apt-get clean
 
 WORKDIR /code
 
 ADD pom.xml /code/pom.xml
+ADD settings.xml /etc/maven/settings.xml
+
 RUN ["mvn", "dependency:resolve"]
 RUN ["mvn", "verify"]
 

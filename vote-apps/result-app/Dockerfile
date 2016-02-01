@@ -1,5 +1,6 @@
 FROM hypriot/rpi-node
 
+RUN echo 'Acquire::http::proxy "http://10.0.4.2:3128";' > /etc/apt/apt.conf.d/proxy.conf
 RUN mkdir /app
 WORKDIR /app
 
