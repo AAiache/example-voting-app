@@ -23,9 +23,9 @@ Since this app makes use of Compose's experimental networking support, it must b
     $ docker-compose --x-networking up -d
 
 NB: Instead of the option "--x-networking" we can just establish the links between the differents services in the docker-compose file:  
-- voting-app needs a link to redis  
-- worker needs a link to redis and db  
-- result-app neeeds db  
+- Voting-app needs a link to redis  
+- Worker needs a link to redis and db  
+- Result-app neeeds db  
 
 The app will be running on port 5000 on your Docker host, and the results will be on port 5001.
 
